@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.hubspot</groupId>
+    <artifactId>basepom</artifactId>
+    <version>25.7</version>
+  </parent>
+
+  <artifactId>CambridgeCrashData</artifactId>
+  <version>0.1-SNAPSHOT</version>
+
+  <properties>
+    <basepom.check.skip-findbugs>true</basepom.check.skip-findbugs>
+    <basepom.check.skip-prettier>false</basepom.check.skip-prettier>
+    <basepom.prettier.node-version>16.15.1</basepom.prettier.node-version>
+    <basepom.prettier.prettier-java-version>1.4.0</basepom.prettier.prettier-java-version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-csv</artifactId>
+        <version>1.9.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.hubspot.maven.plugins</groupId>
+          <artifactId>prettier-maven-plugin</artifactId>
+          <version>0.18</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
